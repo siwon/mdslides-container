@@ -1,0 +1,3 @@
+[submodule "markdown-slides"]
+	path = markdown-slides
+	url = git@github.com:siwon/markdown-slides.git
