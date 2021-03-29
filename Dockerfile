@@ -1,9 +1,22 @@
 FROM python:buster
 
-WORKDIR /usr/src/app
+ENV USER mdslides
 
-RUN python -m pip install git+https://gitlab.com/da_doomer/markdown-slides.git
+RUN python -m pip install git+https://github.com/siwon/markdown-slides.git
+RUN apt update && \
+  apt install -y chromium && \
+  apt install -y rsync && \
+  apt clean
+RUN adduser ${USER}
+RUN mkdir -p /tmp/src/slides
 
-COPY . .
+ENV PDF="false"
 
-CMD ["/bin/bash"]
+WORKDIR /tmp
+
+COPY ./run.sh ./run.sh
+
+CMD ["./run.sh"]
+
+USER ${USER}
+VOLUME /tmp/src/slides
