@@ -17,8 +17,9 @@ ENV PDF="false"
 WORKDIR /tmp
 
 COPY ./run.sh ./run.sh
+RUN chmod -R u+rwx *
 
-CMD ["/bin/bash run.sh"]
+CMD ["./run.sh"]
 
 # USER ${USER}
 VOLUME /tmp/src/slides
