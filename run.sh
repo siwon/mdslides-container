@@ -10,6 +10,7 @@ else
 
   echo "###########################"
   echo "Done. Open ./out/index.html with your web browser"
+  echo "Done. To print, open ./out/index.html?print-pdf with your web browser"
   echo "###########################"
 
 fi
