@@ -18,7 +18,7 @@ WORKDIR /tmp
 
 COPY ./run.sh ./run.sh
 
-CMD ["./run.sh"]
+CMD ["/bin/bash run.sh"]
 
 # USER ${USER}
 VOLUME /tmp/src/slides
